@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es" style="scroll-behavior: smooth;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canciones Personalizadas - Tu Música Única</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo básico para la barra de desplazamiento */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #CCE0EE;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #668BA4;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #34657F;
+        }
+    </style>
+</head>
+<!-- Paleta de colores: basada en tonos azules vibrantes para un estilo profesional y moderno -->
+<!-- #003F5C (Azul Oscuro - Primario), #34657F (Azul Medio - Secundario), #668BA4 (Azul Claro - Acento), #99B2C9 (Azul muy claro - Fondo secundario), #CCE0EE (Azul pálido - Fondo claro) -->
+<body class="bg-[#CCE0EE] text-[#003F5C]">
+
+    <!-- Encabezado y Navegación -->
+    <header class="bg-[#003F5C] text-white p-4 shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <a href="#inicio" class="text-2xl font-bold text-[#CCE0EE] mb-2 md:mb-0">Tu Canción Única</a>
+            <div class="space-x-4">
+                <a href="#inicio" class="hover:text-[#668BA4] transition duration-300">Inicio</a>
+                <a href="#como-funciona" class="hover:text-[#668BA4] transition duration-300">¿Cómo funciona?</a>
+                <a href="#precios" class="hover:text-[#668BA4] transition duration-300">Precios</a>
+                <a href="#ejemplos" class="hover:text-[#668BA4] transition duration-300">Ejemplos</a>
+                <a href="#pedido" class="hover:text-[#668BA4] transition duration-300">Pide tu Canción</a>
+                <a href="#contacto" class="hover:text-[#668BA4] transition duration-300">Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <!-- Sección de Inicio -->
+        <section id="inicio" class="bg-white rounded-xl shadow-xl p-8 mb-12 text-center md:py-20">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-[#003F5C] mb-4">¡Tu Historia, Tu Canción!</h1>
+            <p class="text-xl md:text-2xl text-[#34657F] mb-6 max-w-3xl mx-auto">Convertimos tus emociones, recuerdos y momentos especiales en una canción original y única, creada solo para ti o para esa persona especial.</p>
+            <a href="#pedido" class="inline-block bg-[#668BA4] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#34657F] transition duration-300 transform hover:scale-105">Pide Tu Canción Ahora</a>
+        </section>
+
+        <!-- Sección "¿Cómo funciona?" -->
+        <section id="como-funciona" class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C] text-center mb-8">¿Cómo funciona? Es muy fácil</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Paso 1 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="text-5xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold text-[#003F5C] mb-2">1. Cuéntanos tu Historia</h3>
+                    <p class="text-[#34657F]">Completa el formulario de pedido con todos los detalles, emociones y anécdotas que quieres que tu canción transmita.</p>
+                </div>
+                <!-- Paso 2 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="text-5xl mb-4">🎶</div>
+                    <h3 class="text-xl font-bold text-[#003F5C] mb-2">2. Creamos la Magia</h3>
+                    <p class="text-[#34657F]">Nuestro equipo de compositores y músicos transforma tus palabras en una melodía y letra inolvidables.</p>
+                </div>
+                <!-- Paso 3 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="text-5xl mb-4">🎧</div>
+                    <h3 class="text-xl font-bold text-[#003F5C] mb-2">3. Recibe tu Canción</h3>
+                    <p class="text-[#34657F]">Te enviaremos un enlace exclusivo para que puedas escuchar y compartir tu obra maestra personalizada.</p>
+                </div>
+                <!-- Paso 4 -->
+                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                    <div class="text-5xl mb-4">🎁</div>
+                    <h3 class="text-xl font-bold text-[#003F5C] mb-2">4. ¡Disfrútala!</h3>
+                    <p class="text-[#34657F]">Sorprende a tus seres queridos o revivie ese momento especial cada vez que la escuches.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Precios -->
+        <section id="precios" class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C] text-center mb-8">Nuestros Precios</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Plan Básico -->
+                <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-[#34657F] flex flex-col items-center">
+                    <h3 class="text-2xl font-bold text-[#003F5C] mb-4">Paquete Acústico</h3>
+                    <p class="text-4xl font-extrabold text-[#668BA4] mb-4">Desde $XXX USD</p>
+                    <ul class="text-[#34657F] list-disc list-inside text-left mb-6 space-y-2">
+                        <li>Canción con letra personalizada</li>
+                        <li>Instrumentación básica (ej. guitarra y voz o piano y voz)</li>
+                        <li>Entrega en formato MP3 de alta calidad</li>
+                        <li>Tiempo de entrega: 7-10 días hábiles</li>
+                    </ul>
+                    <a href="#pedido" class="inline-block bg-[#668BA4] text-white font-bold py-2 px-6 rounded-full hover:bg-[#34657F] transition duration-300">¡Lo Quiero!</a>
+                </div>
+                <!-- Plan Premium -->
+                <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-[#003F5C] flex flex-col items-center">
+                    <h3 class="text-2xl font-bold text-[#003F5C] mb-4">Paquete Completo</h3>
+                    <p class="text-4xl font-extrabold text-[#003F5C] mb-4">Desde $YYY USD</p>
+                    <ul class="text-[#34657F] list-disc list-inside text-left mb-6 space-y-2">
+                        <li>Canción con letra personalizada</li>
+                        <li>Producción musical completa (batería, bajo, sintetizadores, etc.)</li>
+                        <li>Mezcla y masterización profesional</li>
+                        <li>Entrega en formato MP3 y WAV</li>
+                        <li>Tiempo de entrega: 10-15 días hábiles</li>
+                        <li>*Opción de una revisión de letra*</li>
+                    </ul>
+                    <a href="#pedido" class="inline-block bg-[#003F5C] text-white font-bold py-2 px-6 rounded-full hover:bg-[#34657F] transition duration-300">¡Lo Quiero!</a>
+                </div>
+            </div>
+            <p class="text-center text-[#34657F] mt-8 text-sm">Los precios son estimados. El costo final dependerá de la complejidad y los detalles específicos de tu canción.</p>
+        </section>
+
+        <!-- Sección Ejemplos de Canciones -->
+        <section id="ejemplos" class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C] text-center mb-8">Escucha Nuestros Ejemplos</h2>
+            <p class="text-center text-[#34657F] mb-10 max-w-2xl mx-auto">Aquí te presentamos algunas muestras de nuestras creaciones. Estas canciones son ejemplos del estilo y la calidad que puedes esperar.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Canción Ejemplo 1 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/200x200/99B2C9/003F5C?text=Amor+Eterno" alt="Portada Amor Eterno" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Amor Eterno</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Balada Acústica</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
+                <!-- Canción Ejemplo 2 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/200x200/668BA4/003F5C?text=Mi+Aventura" alt="Portada Mi Aventura" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Mi Aventura</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Pop-Rock</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
+                <!-- Canción Ejemplo 3 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/200x200/34657F/CCE0EE?text=Dulces+Sueños" alt="Portada Dulces Sueños" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Dulces Sueños</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Canción de Cuna</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
+                <!-- Canción Ejemplo 4 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/200x200/99B2C9/003F5C?text=Celebración" alt="Portada Celebración" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Celebración</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Pop Festivo</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
+                <!-- Canción Ejemplo 5 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/200x200/668BA4/003F5C?text=Recuerdos" alt="Portada Recuerdos" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Recuerdos</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Folk Emocional</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
+                <!-- Canción Ejemplo 6 -->
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
+                    <img src="https://placehold.co/200x200/34657F/CCE0EE?text=Tu+Esencia" alt="Portada Tu Esencia" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Tu Esencia</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Chill Instrumental</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Formulario para Pedir Canción -->
+        <section id="pedido" class="mb-12 max-w-3xl mx-auto bg-white rounded-xl shadow-xl p-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C] text-center mb-8">Pide tu Canción Personalizada</h2>
+            <form id="songRequestForm" class="space-y-6">
+                <div>
+                    <label for="nombre" class="block text-lg font-semibold text-[#003F5C] mb-2">Tu Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="w-full p-3 border border-[#99B2C9] rounded-lg focus:ring-2 focus:ring-[#668BA4] focus:border-transparent text-[#003F5C]" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-lg font-semibold text-[#003F5C] mb-2">Tu Email:</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-[#99B2C9] rounded-lg focus:ring-2 focus:ring-[#668BA4] focus:border-transparent text-[#003F5C]" placeholder="Ej. tu.correo@ejemplo.com" required>
+                </div>
+                <div>
+                    <label for="tipo-cancion" class="block text-lg font-semibold text-[#003F5C] mb-2">Tipo de Canción:</label>
+                    <select id="tipo-cancion" name="tipo_cancion" class="w-full p-3 border border-[#99B2C9] rounded-lg focus:ring-2 focus:ring-[#668BA4] focus:border-transparent bg-white text-[#003F5C]" required>
+                        <option value="">Selecciona un tipo de canción</option>
+                        <option value="acustica">Paquete Acústico</option>
+                        <option value="completa">Paquete Completo</option>
+                        <option value="otro">Otro / Necesito Asesoría</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="detalles" class="block text-lg font-semibold text-[#003F5C] mb-2">Detalles para tu Canción (Historia, Emociones, Palabras Clave):</label>
+                    <textarea id="detalles" name="detalles" rows="7" class="w-full p-3 border border-[#99B2C9] rounded-lg focus:ring-2 focus:ring-[#668BA4] focus:border-transparent resize-y text-[#003F5C]" placeholder="Cuéntanos todo lo que te gustaría que la canción transmita..."></textarea>
+                </div>
+                <button type="submit" class="w-full bg-[#003F5C] text-white font-bold py-3 px-6 rounded-full text-lg shadow-md hover:bg-[#34657F] transition duration-300 transform hover:scale-105">Enviar Pedido</button>
+            </form>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="mb-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#003F5C] mb-8">¿Preguntas? ¡Contáctanos!</h2>
+            <p class="text-xl text-[#34657F] mb-6 max-w-2xl mx-auto">¿Tienes dudas sobre el proceso, los precios o simplemente quieres charlar sobre tu idea? Estamos aquí para ayudarte.</p>
+            <a href="https://wa.me/xxxxxxxxxx?text=Hola%2C%20estoy%20interesado%20en%20una%20canción%20personalizada." target="_blank" class="inline-block bg-green-500 text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-green-600 transition duration-300 transform hover:scale-105">
+                Chatea con Nosotros por WhatsApp
+            </a>
+            <p class="text-sm text-[#668BA4] mt-4">También puedes escribirnos a: <a href="mailto:tu.correo@ejemplo.com" class="text-[#003F5C] hover:underline">tu.correo@ejemplo.com</a></p>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-[#003F5C] text-white p-6 text-center shadow-lg">
+        <p>&copy; 2024 Tu Canción Única. Todos los derechos reservados.</p>
+        <p class="text-sm text-[#99B2C9] mt-2">Música hecha con pasión y personalizada para ti.</p>
+    </footer>
+
+    <!-- JavaScript para el formulario (simulación de envío) -->
+    <script>
+        document.getElementById('songRequestForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const tipoCancion = document.getElementById('tipo-cancion').value;
+            const detalles = document.getElementById('detalles').value;
+
+            if (nombre && email && tipoCancion) {
+                // Aquí podrías enviar los datos a un servidor,
+                // o a un servicio como Formspree.io, Netlify Forms, etc.
+                // Para esta demo, solo mostraremos un mensaje.
+                alert('¡Gracias por tu pedido, ' + nombre + '! Nos pondremos en contacto contigo pronto al correo ' + email + ' para confirmar los detalles de tu ' + (tipoCancion === 'acustica' ? 'Canción Acústica' : tipoCancion === 'completa' ? 'Canción Completa' : 'petición especial') + '.');
+                this.reset(); // Limpia el formulario
+            } else {
+                alert('Por favor, completa todos los campos obligatorios (Nombre, Email, Tipo de Canción).');
+            }
+        });
+    </script>
+
+</body>
+</html>
