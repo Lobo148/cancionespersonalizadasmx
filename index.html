@@ -27,12 +27,37 @@
             background: #6A0DAD; /* Color al pasar el ratón */
         }
         /* Colores de la paleta:
-           Fondo principal: #F0E6FA (Lavender Blush)
-           Texto/Elementos Oscuros: #5C007F (Dark Violet)
-           Elementos Ligeros/Secundarios: #8A2BE2 (Blue Violet)
-           Acento/Botones: #FF69B4 (Hot Pink)
-           Cabecera/Pie: #4B0082 (Indigo)
+            Fondo principal: #F0E6FA (Lavender Blush)
+            Texto/Elementos Oscuros: #5C007F (Dark Violet)
+            Elementos Ligeros/Secundarios: #8A2BE2 (Blue Violet)
+            Acento/Botones: #FF69B4 (Hot Pink)
+            Cabecera/Pie: #4B0082 (Indigo)
         */
+        /* Animación de entrada para las secciones */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilo para el spinner de carga */
+        .loader {
+            border: 4px solid #f3f3f3; /* Light grey */
+            border-top: 4px solid #8A2BE2; /* Blue violet */
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="bg-[#F0E6FA] text-[#5C007F]">
@@ -44,6 +69,7 @@
             <div class="space-x-4 flex flex-wrap justify-center md:justify-start">
                 <a href="#inicio" class="hover:text-[#FF69B4] transition duration-300">Inicio</a>
                 <a href="#como-funciona" class="hover:text-[#FF69B4] transition duration-300">¿Cómo funciona?</a>
+                <a href="#generador-letras" class="hover:text-[#FF69B4] transition duration-300">Genera tu Letra</a>
                 <a href="#precios" class="hover:text-[#FF69B4] transition duration-300">Precios</a>
                 <a href="#ejemplos" class="hover:text-[#FF69B4] transition duration-300">Ejemplos</a>
                 <a href="#pedido" class="hover:text-[#FF69B4] transition duration-300">Pide tu Canción</a>
@@ -54,37 +80,51 @@
 
     <main class="container mx-auto p-4 md:p-8">
 
-        <!-- Sección de Inicio -->
-        <section id="inicio" class="bg-white rounded-xl shadow-xl p-8 mb-12 text-center md:py-20">
+        <!-- Sección de Inicio (Hero) -->
+        <section id="inicio" class="bg-white rounded-xl shadow-xl p-8 mb-12 text-center md:py-20 fade-in">
             <h1 class="text-4xl md:text-6xl font-extrabold text-[#4B0082] mb-4">¡Tu Historia, Tu Canción!</h1>
             <p class="text-xl md:text-2xl text-[#8A2BE2] mb-6 max-w-3xl mx-auto">Convertimos tus emociones, recuerdos y momentos especiales en una canción original y única, creada solo para ti o para esa persona especial. ¡Regala un momento inolvidable!</p>
             <a href="#pedido" class="inline-block bg-[#FF69B4] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#DA70D6] transition duration-300 transform hover:scale-105">Crea Tu Canción Ahora</a>
         </section>
 
+        <!-- Sección Contadores (Nueva) -->
+        <section id="contadores" class="bg-white rounded-xl shadow-xl p-8 mb-12 text-center fade-in">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="flex flex-col items-center">
+                    <p class="text-6xl font-extrabold text-[#8A2BE2]" id="visitas-counter">22300</p>
+                    <p class="text-xl font-semibold text-[#5C007F]">Visitas a la Página</p>
+                </div>
+                <div class="flex flex-col items-center">
+                    <p class="text-6xl font-extrabold text-[#FF69B4]" id="canciones-counter">2320</p>
+                    <p class="text-xl font-semibold text-[#5C007F]">Canciones Creadas</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Sección "¿Cómo funciona?" -->
-        <section id="como-funciona" class="mb-12">
+        <section id="como-funciona" class="mb-12 fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] text-center mb-8">¿Cómo funciona? ¡Es magia en 4 pasos!</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Paso 1 -->
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:scale-105 transition duration-300">
                     <div class="text-5xl mb-4 text-[#8A2BE2]">📝</div>
                     <h3 class="text-xl font-bold text-[#5C007F] mb-2">1. Cuéntanos tu Historia</h3>
-                    <p class="text-[#8A2BE2]">Completa nuestro sencillo formulario con los detalles, emociones y anécdotas que quieres inmortalizar en tu canción.</p>
+                    <p class="text-[#8A2BE2]">Completa nuestro sencillo formulario o usa nuestro generador de letras para empezar tu canción.</p>
                 </div>
                 <!-- Paso 2 -->
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:scale-105 transition duration-300">
                     <div class="text-5xl mb-4 text-[#FF69B4]">🎶</div>
                     <h3 class="text-xl font-bold text-[#5C007F] mb-2">2. Creamos la Melodía</h3>
                     <p class="text-[#8A2BE2]">Nuestros talentosos compositores y músicos transforman tus palabras en una letra emotiva y una melodía inolvidable.</p>
                 </div>
                 <!-- Paso 3 -->
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:scale-105 transition duration-300">
                     <div class="text-5xl mb-4 text-[#8A2BE2]">🎧</div>
                     <h3 class="text-xl font-bold text-[#5C007F] mb-2">3. Recibe tu Obra</h3>
-                    <p class="text-[#8A2BE2]">Te enviaremos un enlace exclusivo para que escuches y descargues (si aplica) tu canción personalizada en alta calidad.</p>
+                    <p class="text-[#8A2BE2]">Te enviaremos un enlace exclusivo para que escuches y descargues tu canción personalizada en alta calidad.</p>
                 </div>
                 <!-- Paso 4 -->
-                <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6 text-center hover:scale-105 transition duration-300">
                     <div class="text-5xl mb-4 text-[#FF69B4]">🎁</div>
                     <h3 class="text-xl font-bold text-[#5C007F] mb-2">4. ¡Sorprende y Emociona!</h3>
                     <p class="text-[#8A2BE2]">Haz de ese momento un recuerdo eterno, regalando una canción única que tocará el corazón.</p>
@@ -92,25 +132,68 @@
             </div>
         </section>
 
+        <!-- Sección Generador de Letras con Gemini -->
+        <section id="generador-letras" class="mb-12 max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-8 fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] text-center mb-8">Genera tu Propia Letra con IA</h2>
+            <p class="text-center text-[#8A2BE2] mb-6">Experimenta el poder de la inteligencia artificial. Ingresa el género y algunas ideas clave, y nuestra IA creará una letra original para tu canción.</p>
+            <div class="space-y-6">
+                <div>
+                    <label for="generoMusical" class="block text-lg font-semibold text-[#5C007F] mb-2">Género Musical:</label>
+                    <input type="text" id="generoMusical" class="w-full p-3 border border-[#8A2BE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF69B4]" placeholder="Ej: Pop, Rock, Balada, Cumbia, Hip Hop, Reggaeton" required>
+                </div>
+                <div>
+                    <label for="ideasClave" class="block text-lg font-semibold text-[#5C007F] mb-2">Tema / Ideas Clave:</label>
+                    <textarea id="ideasClave" rows="4" class="w-full p-3 border border-[#8A2BE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF69B4]" placeholder="Ej: Amor de pareja, amistad, cumpleaños, despedida, gratitud hacia mis padres. Incluye nombres, momentos o sentimientos." required></textarea>
+                </div>
+                <div class="text-center">
+                    <button id="generarLetraBtn" class="inline-block bg-[#8A2BE2] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#6A0DAD] transition duration-300 transform hover:scale-105">
+                        Generar Letra
+                    </button>
+                </div>
+
+                <div id="loadingIndicator" class="flex justify-center my-4 hidden">
+                    <div class="loader"></div>
+                    <p class="ml-4 text-[#8A2BE2]">Generando tu letra, esto puede tomar un momento...</p>
+                </div>
+
+                <div id="generatedLyricsContainer" class="hidden">
+                    <h3 class="text-2xl font-bold text-[#4B0082] mt-8 mb-4 text-center">Tu Letra Generada:</h3>
+                    <div id="generatedLyrics" class="bg-[#F0E6FA] p-6 rounded-md border border-[#8A2BE2] text-[#5C007F] whitespace-pre-wrap text-left shadow-inner">
+                        <!-- La letra generada se insertará aquí -->
+                    </div>
+                    <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6">
+                        <button id="useLyricsBtn" class="inline-block bg-[#FF69B4] text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-[#DA70D6] transition duration-300">
+                            Usar esta letra en mi pedido
+                        </button>
+                        <button id="generateNewLyricsBtn" class="inline-block bg-gray-400 text-white font-bold py-3 px-6 rounded-full shadow-md hover:bg-gray-500 transition duration-300">
+                            Generar otra letra
+                        </button>
+                    </div>
+                </div>
+                <p class="text-sm text-[#8A2BE2] mt-8 text-center">Recuerda que esta letra es una sugerencia generada por IA. Nuestros expertos pueden pulirla o crear una completamente nueva basada en tus ideas.</p>
+            </div>
+        </section>
+
         <!-- Sección Precios -->
-        <section id="precios" class="mb-12">
+        <section id="precios" class="mb-12 fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] text-center mb-8">Nuestros Paquetes</h2>
             <p class="text-center text-[#8A2BE2] mb-10 max-w-2xl mx-auto">Elige el paquete que mejor se adapte a tus necesidades y al impacto que quieres generar. ¡Cada uno es un regalo para el alma!</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Paquete Express -->
-                <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-[#FF69B4] flex flex-col items-center">
+                <!-- Paquete Express - Servicio Premium y Rápido -->
+                <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-[#FF69B4] flex flex-col items-center transform hover:scale-105 transition duration-300">
                     <h3 class="text-2xl font-bold text-[#5C007F] mb-4">🎵 Canción Express 🎵</h3>
                     <p class="text-4xl font-extrabold text-[#FF69B4] mb-4">$999 MXN</p>
                     <ul class="text-[#8A2BE2] list-disc list-inside text-left mb-6 space-y-2">
                         <li>Letra personalizada y emotiva.</li>
                         <li>Producción musical ágil y profesional.</li>
                         <li>Ideal para sorpresas de última hora.</li>
-                        <li>**Entrega en solo ¡2 horas!**</li>
+                        <li>**Entrega súper rápida en solo ¡2 horas!**</li>
+                        <li>Servicio premium prioritario.</li>
                     </ul>
-                    <a href="#pedido" class="inline-block bg-[#FF69B4] text-white font-bold py-2 px-6 rounded-full hover:bg-[#DA70D6] transition duration-300">¡Sorprende Ya!</a>
+                    <button type="button" onclick="selectPackage('Express')" class="inline-block bg-[#FF69B4] text-white font-bold py-2 px-6 rounded-full hover:bg-[#DA70D6] transition duration-300">¡Sorprende Ya!</button>
                 </div>
                 <!-- Paquete Estándar -->
-                <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-[#8A2BE2] flex flex-col items-center">
+                <div class="bg-white rounded-xl shadow-xl p-8 border-t-8 border-[#8A2BE2] flex flex-col items-center transform hover:scale-105 transition duration-300">
                     <h3 class="text-2xl font-bold text-[#5C007F] mb-4">💖 Canción Estándar 💖</h3>
                     <p class="text-4xl font-extrabold text-[#8A2BE2] mb-4">$499 MXN</p>
                     <ul class="text-[#8A2BE2] list-disc list-inside text-left mb-6 space-y-2">
@@ -119,101 +202,144 @@
                         <li>Ideal para regalos planeados con anticipación.</li>
                         <li>**Entrega en 3 días hábiles.**</li>
                     </ul>
-                    <a href="#pedido" class="inline-block bg-[#8A2BE2] text-white font-bold py-2 px-6 rounded-full hover:bg-[#6A0DAD] transition duration-300">¡Pide la Tuya!</a>
+                    <button type="button" onclick="selectPackage('Estandar')" class="inline-block bg-[#8A2BE2] text-white font-bold py-2 px-6 rounded-full hover:bg-[#6A0DAD] transition duration-300">¡Pide la Tuya!</button>
                 </div>
             </div>
-            <p class="text-center text-[#8A2BE2] mt-8 text-sm">Los precios son fijos para cada paquete. Detalles adicionales pueden consultarse en el formulario de pedido.</p>
+            <p class="text-center text-[#8A2BE2] mt-8 text-sm">Los precios son fijos para cada paquete. Para cualquier duda, contáctanos por WhatsApp.</p>
         </section>
 
         <!-- Sección Ejemplos de Canciones -->
-        <section id="ejemplos" class="mb-12">
+        <section id="ejemplos" class="mb-12 fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] text-center mb-8">Escucha Nuestros Ejemplos</h2>
             <p class="text-center text-[#8A2BE2] mb-10 max-w-2xl mx-auto">Déjate llevar por la emoción. Aquí te presentamos algunas muestras de nuestras creaciones, para que sientas la magia que podemos crear para ti.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Canción Ejemplo 1 -->
-                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-  <img src="https://placehold.co/200x200/9932CC/FFFFFF?text=Mi+Viejo" alt="Portada Mi Viejo" class="w-48 h-48 rounded-md mb-4 shadow-md">
-  <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Mi Viejo</h3>
-  <p class="text-[#34657F] text-center text-sm mb-4">Norteño Suave</p>
-  <audio controls controlsList="nodownload" class="w-full">
-    <source src="https://lobo148.github.io/musica-canciones/Canci%C3%B3n%20para%20agradecer%20a%20mi%20padre.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
-</div>
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/200x200/9932CC/FFFFFF?text=Mi+Viejo" alt="Portada de la canción 'Mi Viejo' de estilo Norteño Suave" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Mi Viejo</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Norteño Suave</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://lobo148.github.io/musica-canciones/Canci%C3%B3n%20para%20agradecer%20a%20mi%20padre.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
                 <!-- Canción Ejemplo 2 -->
-               <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-  <img src="https://placehold.co/200x200/9932CC/FFFFFF?text=Maria+Santos" alt="Portada Maria Santos" class="w-48 h-48 rounded-md mb-4 shadow-md">
-  <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Maria Santos</h3>
-  <p class="text-[#34657F] text-center text-sm mb-4">Estilo Pop</p>
-  <audio controls controlsList="nodownload" class="w-full">
-    <source src="https://lobo148.github.io/musica-canciones/Maria%20santos.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
-</div>
-
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/200x200/9932CC/FFFFFF?text=Maria+Santos" alt="Portada de la canción 'Maria Santos' de estilo Pop" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Maria Santos</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Estilo Pop</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://lobo148.github.io/musica-canciones/Maria%20santos.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
                 <!-- Canción Ejemplo 3 -->
-            <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-  <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=Contigo+Manuela" alt="Portada Contigo Manuel" class="w-48 h-48 rounded-md mb-4 shadow-md">
-  <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Contigo Manuela</h3>
-  <p class="text-[#34657F] text-center text-sm mb-4">Romántica personalizada</p>
-  <audio controls controlsList="nodownload" class="w-full">
-    <source src="https://lobo148.github.io/musica-canciones/contigomanuela%20romantica.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
-</div>
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=Contigo+Manuela" alt="Portada de la canción romántica 'Contigo Manuela'" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Contigo Manuela</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Romántica personalizada</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://lobo148.github.io/musica-canciones/contigomanuela%20romantica.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
                 <!-- Canción Ejemplo 4 -->
-                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-  <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=Cadenashiphop" alt="Portada Cadenas" class="w-48 h-48 rounded-md mb-4 shadow-md">
-  <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Cadenashiphop</h3>
-  <p class="text-[#34657F] text-center text-sm mb-4">Canción personalizada</p>
-  <audio controls controlsList="nodownload" class="w-full">
-    <source src="https://lobo148.github.io/musica-canciones/cadenashiphop.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
-</div>
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=Cadenashiphop" alt="Portada de la canción de hip hop 'Cadenashiphop'" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Cadenashiphop</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Canción personalizada (Hip Hop)</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://lobo148.github.io/musica-canciones/cadenashiphop.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
                 <!-- Canción Ejemplo 5 -->
-                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-  <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=El+Ni%C3%B1o+Tumbado" alt="Portada El Niño Tumbado" class="w-48 h-48 rounded-md mb-4 shadow-md">
-  <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">El Niño Tumbado</h3>
-  <p class="text-[#34657F] text-center text-sm mb-4">Canción personalizada</p>
-  <audio controls controlsList="nodownload" class="w-full">
-    <source src="https://lobo148.github.io/musica-canciones/El%20Ni%C3%B1o%20tumbado.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
-</div>
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=El+Ni%C3%B1o+Tumbado" alt="Portada de la canción 'El Niño Tumbado'" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">El Niño Tumbado</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Canción personalizada</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://lobo148.github.io/musica-canciones/El%20Ni%C3%B1o%20tumbado.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
                 <!-- Canción Ejemplo 6 -->
-           <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center">
-  <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=Graduacion" alt="Portada Graduación" class="w-48 h-48 rounded-md mb-4 shadow-md">
-  <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Graduación</h3>
-  <p class="text-[#34657F] text-center text-sm mb-4">Tema de despedida escolar</p>
-  <audio controls controlsList="nodownload" class="w-full">
-    <source src="https://lobo148.github.io/musica-canciones/graduaci%C3%B3n.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-  </audio>
-  <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
-</div>
+                <div class="bg-white rounded-lg shadow-xl p-6 flex flex-col items-center transform hover:scale-105 transition duration-300">
+                    <img src="https://placehold.co/200x200/7B68EE/FFFFFF?text=Graduacion" alt="Portada de la canción 'Graduación' para despedidas escolares" class="w-48 h-48 rounded-md mb-4 shadow-md">
+                    <h3 class="text-xl font-bold text-[#003F5C] text-center mb-1">Graduación</h3>
+                    <p class="text-[#34657F] text-center text-sm mb-4">Tema de despedida escolar</p>
+                    <audio controls controlsList="nodownload" class="w-full">
+                        <source src="https://lobo148.github.io/musica-canciones/graduaci%C3%B3n.mp3" type="audio/mpeg">
+                        Tu navegador no soporta el elemento de audio.
+                    </audio>
+                    <p class="text-xs text-[#668BA4] mt-2">Solo para escuchar en línea.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Sección Pedido con Google Form -->
-        <section id="pedido" class="mb-12 max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-8">
+        <!-- Sección para escuchar más música -->
+        <section id="mas-musica" class="mb-12 text-center fade-in">
+            <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] mb-8">¿Quieres escuchar más?</h2>
+            <p class="text-xl text-[#8A2BE2] mb-6 max-w-2xl mx-auto">Explora nuestra colección completa de canciones y descubre la diversidad de estilos que podemos crear para ti.</p>
+            <a href="https://drive.google.com/drive/folders/1YV2cz-uGlKM0wE96cdvyksiO2AwpXWIw?usp=sharing" target="_blank" class="inline-block bg-[#8A2BE2] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#6A0DAD] transition duration-300 transform hover:scale-105">
+                Ver Más Ejemplos de Música
+            </a>
+        </section>
+
+        <!-- Sección Pedido (Ahora con Formulario a WhatsApp) -->
+        <section id="pedido" class="mb-12 max-w-4xl mx-auto bg-white rounded-xl shadow-xl p-8 fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] text-center mb-8">¡Pide tu Canción Personalizada Aquí!</h2>
-            <p class="text-center text-[#8A2BE2] mb-6">Completa el siguiente formulario para iniciar la creación de tu canción. ¡Cuéntanos tu historia!</p>
-            <div class="relative overflow-hidden w-full mx-auto" style="padding-top: 147%;">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSOWn-OJOV527pvzrZcLImwG2ztn4e5e8yj_iFuQ7yi4CK3Q/viewform?embedded=true" class="absolute top-0 left-0 w-full h-full border-0 rounded-lg shadow-inner">Cargando…</iframe>
-            </div>
+            <p class="text-center text-[#8A2BE2] mb-6">Completa el siguiente formulario con los detalles de tu canción. Una vez que lo envíes, abriremos WhatsApp con tu mensaje listo.</p>
+            <form id="orderForm" class="space-y-6">
+                <div>
+                    <label for="nombre" class="block text-lg font-semibold text-[#5C007F] mb-2">Tu Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" class="w-full p-3 border border-[#8A2BE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF69B4]" placeholder="Escribe tu nombre" required>
+                </div>
+                <div>
+                    <label for="email" class="block text-lg font-semibold text-[#5C007F] mb-2">Tu Email (opcional):</label>
+                    <input type="email" id="email" name="email" class="w-full p-3 border border-[#8A2BE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF69B4]" placeholder="tu.correo@ejemplo.com">
+                </div>
+                <div>
+                    <label for="historia" class="block text-lg font-semibold text-[#5C007F] mb-2">Cuéntanos tu Historia o Detalles de la Canción:</label>
+                    <textarea id="historia" name="historia" rows="6" class="w-full p-3 border border-[#8A2BE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF69B4]" placeholder="Describe a quién va dirigida la canción, la ocasión, las emociones que quieres transmitir, anécdotas clave, frases importantes, etc." required></textarea>
+                </div>
+                <div>
+                    <label class="block text-lg font-semibold text-[#5C007F] mb-3">Elige tu Paquete:</label>
+                    <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-6">
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="paquete" value="Express" class="form-radio h-5 w-5 text-[#FF69B4]" checked>
+                            <span class="ml-2 text-[#5C007F] font-medium">🎵 Canción Express ($999 MXN)</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="paquete" value="Estandar" class="form-radio h-5 w-5 text-[#8A2BE2]">
+                            <span class="ml-2 text-[#5C007F] font-medium">💖 Canción Estándar ($499 MXN)</span>
+                        </label>
+                    </div>
+                </div>
+                <!-- Campo para código de descuento -->
+                <div>
+                    <label for="codigoDescuento" class="block text-lg font-semibold text-[#5C007F] mb-2">Código de Descuento (opcional):</label>
+                    <input type="text" id="codigoDescuento" name="codigoDescuento" class="w-full p-3 border border-[#8A2BE2] rounded-md focus:outline-none focus:ring-2 focus:ring-[#FF69B4]" placeholder="Ingresa tu código aquí (ej: DESCUENTO10)">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="inline-block bg-[#FF69B4] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#DA70D6] transition duration-300 transform hover:scale-105">
+                        Enviar Pedido por WhatsApp
+                    </button>
+                </div>
+            </form>
+            <p class="text-sm text-[#8A2BE2] mt-8 text-center">Al hacer clic en "Enviar Pedido por WhatsApp", serás redirigido a WhatsApp con un mensaje pre-llenado que podrás revisar antes de enviar.</p>
         </section>
 
         <!-- Sección Contacto -->
-        <section id="contacto" class="mb-12 text-center">
+        <section id="contacto" class="mb-12 text-center fade-in">
             <h2 class="text-3xl md:text-4xl font-bold text-[#4B0082] mb-8">¿Preguntas? ¡Contáctanos!</h2>
             <p class="text-xl text-[#8A2BE2] mb-6 max-w-2xl mx-auto">¿Tienes dudas sobre el proceso, los precios o necesitas asesoría para tu idea? Estamos aquí para escucharte y ayudarte a crear la canción perfecta.</p>
-            <a href="https://wa.me/524888898698?text=Hola%2C%20estoy%20interesado%20en%20una%20canción%20personalizada." target="_blank" class="inline-block bg-[#FF69B4] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#DA70D6] transition duration-300 transform hover:scale-105">
+            <a href="https://wa.me/524401000337?text=Hola%2C%20estoy%20interesado%20en%20una%20canci%C3%B3n%20personalizada." target="_blank" class="inline-block bg-[#FF69B4] text-white font-bold py-3 px-8 rounded-full text-lg shadow-md hover:bg-[#DA70D6] transition duration-300 transform hover:scale-105">
                 Chatea con Nosotros por WhatsApp
             </a>
             <p class="text-sm text-[#8A2BE2] mt-4">También puedes escribirnos a: <a href="mailto:tu.correo@ejemplo.com" class="text-[#5C007F] hover:underline">tu.correo@ejemplo.com</a></p>
@@ -227,5 +353,182 @@
         <p class="text-sm text-[#F0E6FA] mt-2">Música hecha con pasión y personalizada para ti.</p>
     </footer>
 
+    <script>
+        // Script para la animación de entrada de las secciones al hacer scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.fade-in');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // 10% de la sección visible para activar
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                        observer.unobserve(entry.target); // Dejar de observar una vez que aparece
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // JavaScript para manejar los contadores
+            const visitasCounter = document.getElementById('visitas-counter');
+            const cancionesCounter = document.getElementById('canciones-counter');
+
+            let currentVisitas = parseInt(localStorage.getItem('visitas')) || 22300;
+            let currentCanciones = parseInt(localStorage.getItem('canciones_generadas')) || 2320;
+
+            // Incrementar contadores en cada carga de página
+            currentVisitas += 1;
+            // Incrementar canciones por un número pequeño para simular cambio
+            currentCanciones += Math.floor(Math.random() * 3) + 1; // Incrementa entre 1 y 3
+
+            visitasCounter.textContent = currentVisitas.toLocaleString('es-MX');
+            cancionesCounter.textContent = currentCanciones.toLocaleString('es-MX');
+
+            localStorage.setItem('visitas', currentVisitas);
+            localStorage.setItem('canciones_generadas', currentCanciones);
+
+
+            // JavaScript para manejar el formulario de pedido y enviar por WhatsApp
+            const orderForm = document.getElementById('orderForm');
+            orderForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita el envío tradicional del formulario
+
+                const nombre = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const historia = document.getElementById('historia').value;
+                const paquete = document.querySelector('input[name="paquete"]:checked').value;
+                const codigoDescuento = document.getElementById('codigoDescuento').value.trim(); // Obtener el valor del código de descuento
+
+                // Construir el mensaje de WhatsApp
+                let whatsappMessage = `¡Hola! Soy ${nombre}.\n`;
+                if (email) {
+                    whatsappMessage += `Mi email es: ${email}\n`;
+                }
+                whatsappMessage += `Me gustaría pedir una Canción ${paquete}.\n\n`;
+                whatsappMessage += `Aquí están los detalles para mi canción:\n`;
+                whatsappMessage += `${historia}\n\n`;
+
+                // Añadir el código de descuento si se proporcionó
+                if (codigoDescuento) {
+                    whatsappMessage += `Código de Descuento: ${codigoDescuento}\n\n`;
+                }
+
+                whatsappMessage += `¡Espero su respuesta para empezar!`;
+
+                // Codificar el mensaje para la URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                const whatsappUrl = `https://wa.me/524401000337?text=${encodedMessage}`;
+
+                // Abrir WhatsApp
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // Función para seleccionar el paquete desde los botones de precios
+            window.selectPackage = function(packageName) {
+                document.querySelector(`input[name="paquete"][value="${packageName}"]`).checked = true;
+                // Opcional: Desplazarse al formulario de pedido después de seleccionar
+                document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' });
+            };
+
+            // JavaScript para el Generador de Letras con Gemini
+            const generarLetraBtn = document.getElementById('generarLetraBtn');
+            const generoMusicalInput = document.getElementById('generoMusical');
+            const ideasClaveInput = document.getElementById('ideasClave');
+            const loadingIndicator = document.getElementById('loadingIndicator');
+            const generatedLyricsContainer = document.getElementById('generatedLyricsContainer');
+            const generatedLyricsDiv = document.getElementById('generatedLyrics');
+            const useLyricsBtn = document.getElementById('useLyricsBtn');
+            const generateNewLyricsBtn = document.getElementById('generateNewLyricsBtn');
+            const historiaTextArea = document.getElementById('historia'); // Referencia al textarea del formulario de pedido
+
+            generarLetraBtn.addEventListener('click', async () => {
+                const genero = generoMusicalInput.value.trim();
+                const ideas = ideasClaveInput.value.trim();
+
+                if (!genero || !ideas) {
+                    alert('Por favor, ingresa el género musical y las ideas clave para generar la letra.');
+                    return;
+                }
+
+                // Mostrar indicador de carga y ocultar resultados anteriores
+                generatedLyricsContainer.classList.add('hidden');
+                loadingIndicator.classList.remove('hidden');
+                generarLetraBtn.disabled = true; // Desactivar botón mientras carga
+
+                try {
+                    // Construir el prompt para Gemini
+                    const prompt = `Genera una letra de canción completa en español con estrofas y un coro, inspirada en el género "${genero}" y las siguientes ideas clave: "${ideas}". Asegúrate de que la letra sea emotiva y poética.`;
+
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Canvas will provide this at runtime
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        const errorData = await response.json();
+                        throw new Error(`Error API Gemini: ${response.status} - ${errorData.error.message}`);
+                    }
+
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const generatedText = result.candidates[0].content.parts[0].text;
+                        generatedLyricsDiv.textContent = generatedText;
+                        generatedLyricsContainer.classList.remove('hidden');
+                        // Desplazarse a la letra generada
+                        generatedLyricsContainer.scrollIntoView({ behavior: 'smooth' });
+
+                        // Incrementa el contador de canciones generadas al usar el generador
+                        let currentCancionesGeneradas = parseInt(localStorage.getItem('canciones_generadas')) || 2320;
+                        currentCancionesGeneradas += 1;
+                        localStorage.setItem('canciones_generadas', currentCancionesGeneradas);
+                        cancionesCounter.textContent = currentCancionesGeneradas.toLocaleString('es-MX');
+
+                    } else {
+                        generatedLyricsDiv.textContent = 'No se pudo generar una letra. Intenta con otras ideas.';
+                        generatedLyricsContainer.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    console.error('Error al llamar a la API de Gemini:', error);
+                    generatedLyricsDiv.textContent = `Ocurrió un error al generar la letra: ${error.message}. Por favor, inténtalo de nuevo más tarde.`;
+                    generatedLyricsContainer.classList.remove('hidden');
+                } finally {
+                    loadingIndicator.classList.add('hidden');
+                    generarLetraBtn.disabled = false; // Reactivar botón
+                }
+            });
+
+            // Event listener para el botón "Usar esta letra en mi pedido"
+            useLyricsBtn.addEventListener('click', () => {
+                historiaTextArea.value = generatedLyricsDiv.textContent; // Copiar la letra al textarea del formulario
+                document.getElementById('pedido').scrollIntoView({ behavior: 'smooth' }); // Desplazarse al formulario de pedido
+            });
+
+            // Event listener para el botón "Generar otra letra"
+            generateNewLyricsBtn.addEventListener('click', () => {
+                generatedLyricsDiv.textContent = ''; // Limpiar la letra mostrada
+                generatedLyricsContainer.classList.add('hidden'); // Ocultar el contenedor de la letra
+                generoMusicalInput.value = ''; // Limpiar campo de género
+                ideasClaveInput.value = ''; // Limpiar campo de ideas clave
+                generoMusicalInput.focus(); // Enfocar el primer campo para una nueva entrada
+            });
+        });
+    </script>
 </body>
 </html>
